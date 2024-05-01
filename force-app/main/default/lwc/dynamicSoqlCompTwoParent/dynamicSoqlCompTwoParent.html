@@ -1,0 +1,59 @@
+<template>
+
+    <lightning-card title="Dynamic SOQL">
+
+        <div class="slds-p-around_large">
+            <lightning-combobox label="All sObjects"
+                                required="true"
+                                placeholder="Select sObject"
+                                options={allSobjects}
+                                onchange={handleComboboxChange}
+            >
+            </lightning-combobox>
+        </div>
+
+    <template if:true={showAllFields}>
+
+        <div align="center">
+
+            <lightning-button onclick={handleButton} label="Query" variant="brand" ></lightning-button>
+
+            <template if:true={isLoading}>
+                <div class="exampleHolder">
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>
+            </template> 
+
+        </div>
+
+        <div class="slds-grid slds-wrap">
+            
+            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12 slds-p-around_medium">
+            <span>
+
+                <lightning-checkbox-group class="checkBoxStyle" label="All Fields" options={allFieldsChkBox} onchange={handleCheckBoxes}
+                    required="true" value={fieldValue}>
+                </lightning-checkbox-group>
+
+            </span>
+            </div>
+
+            <template if:true={hideDatatable}>
+
+            <div class="slds-col slds-size_1-of-1 slds-large-size_10-of-12 slds-p-around_medium">
+            <span>
+
+                <c-dynamic-soql-comp-two-child class="callChild"></c-dynamic-soql-comp-two-child>
+
+            </span>
+            </div>
+
+        </template> 
+
+            </div>
+
+    </template>
+
+    </lightning-card>
+    
+</template>

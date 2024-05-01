@@ -1,0 +1,22 @@
+<template>
+
+    <lightning-card title="Child-Parent Communication and Imperative method">
+
+        <div class="slds-p-around_large">
+
+            <c-record-form-field field-label="First Name" field-api-name="FirstName" onfieldvalue={handleFieldValue}></c-record-form-field>
+            <c-record-form-field field-label="Last Name" field-api-name="LastName" onfieldvalue={handleFieldValue}></c-record-form-field>
+            <c-record-form-field field-label="Phone" field-api-name="Phone" onfieldvalue={handleFieldValue}></c-record-form-field>
+
+            <div align="center" class="slds-p-around_large">
+                <lightning-button variant="brand" label="Create Contact" onclick={createContact}></lightning-button>
+            </div>
+
+        </div>
+
+    </lightning-card>
+
+
+
+    
+</template>

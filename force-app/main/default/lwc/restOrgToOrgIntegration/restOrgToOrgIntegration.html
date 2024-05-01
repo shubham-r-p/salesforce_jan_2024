@@ -1,0 +1,68 @@
+<template>
+
+    <lightning-card>
+
+        <template if:true={showObjects}>
+            <lightning-combobox label="All sObjects"
+                                required="true"
+                                placeholder="select sObject !"
+                                options={allSobjectsTargetOrg}
+                                onchange={handleCombobox}
+            >
+            </lightning-combobox>
+        </template>
+
+
+
+            <template if:true={showMainMenu}>
+
+                <div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+                    <lightning-layout>
+                        
+                        <lightning-layout-item size="6" padding="around-small">
+                            <div class="custom-box slds-p-around_medium slds-text-align_center">
+                                <lightning-button label="Create New Records" onclick={handleCreateRecButton}></lightning-button>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" padding="around-small">
+                            <div class="custom-box slds-p-around_medium slds-text-align_center">
+                                <lightning-button label="View / Update / Delete"></lightning-button>
+                            </div>
+                        </lightning-layout-item>
+            
+                    </lightning-layout>
+                </div>
+            </template>
+        
+
+
+    </lightning-card>
+
+    <lightning-card if:true={showRecCresteForm}>
+
+        <template if:true={showRecCresteForm}>
+
+            <!-- <lightning-record-form object-api-name={selectedObject} onsuccess={handleSuccess}> -->
+            
+
+            <!-- <div for:each={fieldsObjs} for:item="f">
+                <div key={f.index}>
+                    {f.field}
+                 <lightning-input-field  field-name={f.field}>
+                 </lightning-input-field>
+                 </div>
+             </div> -->
+
+            <h1 for:each={fieldsObjs} for:item="obj" key={Contact}>
+            
+                <lightning-input name={obj.field}>
+                </lightning-input>
+            </h1>
+
+            <!-- </lightning-record-form> -->
+
+        </template>
+
+    </lightning-card>
+    
+</template>

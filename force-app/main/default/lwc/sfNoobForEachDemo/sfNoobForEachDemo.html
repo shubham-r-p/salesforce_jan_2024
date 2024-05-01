@@ -1,0 +1,21 @@
+<template>
+
+    <lightning-card title="For Each Demo">
+
+        <template if:true={arrayCases.data}>
+
+            <template for:each={arrayCases.data} for:item="eachCase">
+
+                <h5 style="max-height: 200px;overflow-x:scroll" key={eachCase.Id}>{eachCase.CaseNumber}-->{eachCase.Subject}
+                </h5>
+                
+            </template>
+
+        </template>
+
+
+
+
+    </lightning-card>
+    
+</template>

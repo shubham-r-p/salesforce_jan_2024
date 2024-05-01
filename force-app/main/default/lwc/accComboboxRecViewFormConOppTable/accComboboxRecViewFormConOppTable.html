@@ -1,0 +1,175 @@
+<template>
+    
+    <lightning-card title="Account Info With Contacts & Opportunities">
+
+        <div class="slds-p-around_large">
+
+        <lightning-combobox value={value} placeholder="Select Account !" options={options} onchange={handleChange}>
+        </lightning-combobox>
+    
+        </div>
+
+        <br>
+        <br>
+
+        <template if:true={showRecViewForm}>
+
+            <div align="center"><h1>--- Account Details ---</h1></div>
+
+            <br>
+
+        <div class="slds-p-around_small">
+
+            Account Name : {accountToDisplay.Name}
+
+            <br>
+            
+            Phone : {accountToDisplay.Phone}
+
+            <br>
+
+            Account Number : {accountToDisplay.AccountNumber}
+
+            <br>
+            
+            Fax : {accountToDisplay.Fax}
+
+            <br>
+
+            State : {accountToDisplay.BillingState}
+
+            <br>
+            
+            City : {accountToDisplay.BillingCity}
+
+
+            <!-- <lightning-record-view-form class="recViewFormStyle" object-api-name={accObj} record-id={accRecId} density="compact">
+
+                <lightning-output-field field-name={nameField}> </lightning-output-field>
+                <lightning-output-field field-name={phoneField}> </lightning-output-field>
+                <lightning-output-field field-name={accNoField}> </lightning-output-field>
+                <lightning-output-field field-name={faxField}> </lightning-output-field>
+                <lightning-output-field field-name={stateField}> </lightning-output-field>
+                <lightning-output-field field-name={cityField}> </lightning-output-field>
+    
+            </lightning-record-view-form> -->
+
+        </div>
+
+        </template>
+
+        <br>
+
+        <template if:true={showConTable}>
+
+            <div align="center"><h1>--- Related Contacts ---</h1></div>
+
+            <br>
+
+            <div class="slds-card__body">
+                <table
+                    class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered slds-table_fixed-layout"
+                    role="grid" aria-label="Example table in a Card">
+                    
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="thColor" scope="col">
+                                <div class="slds-truncate">First Name</div>
+                            </th>
+                            <th class="thColor" scope="col">
+                                <div class="slds-truncate">Last Name</div>
+                            </th>
+                            <th class="thColor" scope="col">
+                                <div class="slds-truncate">Phone</div>
+                            </th>
+                            <th class="thColor" scope="col">
+                                <div class="slds-truncate">Email</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="slds-hint-parent" for:each={lstContact} for:item="con" key={con.Id}>
+                            <td role="gridcell">
+                                <div class="slds-truncate">{con.FirstName}</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="slds-truncate">{con.LastName}</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="slds-truncate">{con.Phone}</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="slds-truncate">{con.Email}</div>
+                            </td>
+                        </tr>
+                    </tbody>
+    
+                </table>
+            </div>
+
+        </template>
+
+        <br>
+
+        <template if:true={showOppTable}>
+
+            <div align="center"><h1>--- Related Opportunities ---</h1></div>
+
+            <br>
+
+            <div class="slds-card__body">
+                <table
+                    class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered slds-table_fixed-layout"
+                    role="grid" aria-label="Example table in a Card">
+                    
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="thColor" scope="col">
+                                <div class="slds-truncate">Opportunity Name</div>
+                            </th>
+                            <th class="thColor" scope="col">
+                                <div class="slds-truncate">Amount</div>
+                            </th>
+                            <th class="thColor" scope="col">
+                                <div class="slds-truncate">Stage</div>
+                            </th>
+                            <th class="thColor" scope="col">
+                                <div class="slds-truncate">Close Date</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="slds-hint-parent" for:each={lstOpportunities} for:item="opp" key={opp.Id}>
+                            <td role="gridcell">
+                                <div class="slds-truncate">{opp.Name}</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="slds-truncate">{opp.Amount}</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="slds-truncate">{opp.StageName}</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="slds-truncate">{opp.CloseDate}</div>
+                            </td>
+                        </tr>
+                    </tbody>
+    
+                </table>
+            </div>
+
+        </template>
+    
+    </lightning-card>
+
+
+
+
+
+
+
+
+
+
+
+</template>

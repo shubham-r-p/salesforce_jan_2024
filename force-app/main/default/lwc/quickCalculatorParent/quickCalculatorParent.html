@@ -1,0 +1,65 @@
+<template>
+
+    <lightning-card title="Quick_Calculator">
+
+
+        <div class="slds-grid">
+            <div class="slds-col slds-p-around_medium">
+                <span>
+        
+                    <lightning-input label="Input1" type="number" onchange={handleInputs} max-length="9999">
+                    </lightning-input>
+        
+                </span>
+            </div>
+            <div class="slds-col slds-p-around_medium">
+                <span>
+        
+                    <lightning-combobox placeholder="Please select option !" options={allOptions} onchange={handleChange}>
+                    </lightning-combobox>
+        
+                </span>
+            </div>
+            <div class="slds-col slds-p-around_medium">
+                <span>
+        
+                    <lightning-input label="Input2" type="number" onchange={handleInputs} max-length="9999">
+                    </lightning-input>
+        
+                </span>
+            </div>
+        </div>
+
+        <!-- <div class="slds-p-around_medium">
+
+
+
+            <lightning-input label="Input1" type="number" onchange={handleInputs} max-length="9999" >
+            </lightning-input>
+
+
+
+            <lightning-combobox placeholder="Please select option !" options={allOptions} onchange={handleChange}>
+            </lightning-combobox>
+
+
+            <lightning-input label="Input2" type="number" onchange={handleInputs} max-length="9999">
+            </lightning-input>
+
+        </div> -->
+
+
+        <div align="center">
+
+            <lightning-button label="Calculate" onclick={handleCalculation}></lightning-button>
+
+        </div>
+
+
+
+    </lightning-card>
+
+    <c-quick-calculator-child></c-quick-calculator-child>
+
+
+</template>

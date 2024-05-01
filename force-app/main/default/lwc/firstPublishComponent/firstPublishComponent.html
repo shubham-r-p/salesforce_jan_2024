@@ -1,0 +1,31 @@
+<template>
+
+    <lightning-card title="Publish (Pub) Component">
+
+        <lightning-button   label="Add +1"
+                            class="slds-p-horizontal_small"
+                            onclick={handlePlusOne}
+        >
+        </lightning-button>
+
+        <lightning-button label="Add -1" class="slds-p-horizontal_small" onclick={handleMinusOne}>
+        </lightning-button>
+        
+        <lightning-button label="Add X2" class="slds-p-horizontal_small" onclick={handleMultiplication}>
+        </lightning-button>
+
+    </lightning-card>
+
+    <lightning-card title="Publish Comp Combobox">
+
+        <lightning-combobox label="All Accounts"
+                            options={allOptions}
+                            placeholder="Select an Account !"
+                            value={value}
+                            class="slds-p-horizontal_large"
+                            onchange={handleComboboxChange}>
+        </lightning-combobox>
+
+    </lightning-card>
+    
+</template>

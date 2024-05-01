@@ -1,0 +1,44 @@
+<apex:page standardController="Aadhar_Enrollment__c">
+    
+    <apex:detail />
+    
+    <apex:form >
+        <apex:pageBlock title="Aadhar Enrollment">
+           <apex:pageBlockSection columns="2" title="Personal Information" collapsible="false">
+               <apex:inputField value="{!Aadhar_Enrollment__c.Name}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.Gender__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.Phone__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.Email__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.DOB__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.Married__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.Languages__c}"/>
+           </apex:pageBlockSection>
+            
+           <apex:pageBlockSection columns="2" title="Address" collapsible="false">
+               <apex:inputField value="{!Aadhar_Enrollment__c.Street__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.City__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.Postal_Code__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.State__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.Nationality__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.Country__c}"/>
+           </apex:pageBlockSection>
+            
+           <apex:pageBlockSection columns="2" title="Other Information" collapsible="false">
+               <apex:inputField value="{!Aadhar_Enrollment__c.Bank_Account_No__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.PAN_No__c}"/>
+           </apex:pageBlockSection>     
+            
+           <apex:pageBlockSection columns="1" title="Additional Information" collapsible="false">
+               <apex:inputField value="{!Aadhar_Enrollment__c.DOR__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.Time_Of_Reg__c}"/>
+               <apex:inputField value="{!Aadhar_Enrollment__c.Valid_Data__c}"/>
+           </apex:pageBlockSection>   
+
+           <apex:pageBlockSection ><center>
+               <apex:commandButton value="Save" action="{!Save}"/>></center>
+           </apex:pageBlockSection>             
+            
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

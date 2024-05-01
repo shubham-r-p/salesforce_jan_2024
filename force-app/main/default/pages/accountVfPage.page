@@ -1,0 +1,46 @@
+<apex:page controller="accountVfPageController" tabStyle="Account" showHeader="false">
+    
+    <apex:form >
+        
+        <center><h1>
+            All Accounts 
+            </h1></center>
+        
+    <apex:pageBlock >
+        
+        <apex:pageBlockSection >
+        
+        <apex:pageBlockTable value="{!lstAccounts}" var="eachAcc">           
+            
+            <apex:column value="{!eachAcc.Id}" />
+            
+                <apex:column headerValue="Account Name">
+                    <apex:inputField value="{!eachAcc.Name}"/>
+                </apex:column>  
+            
+                <apex:column headerValue="Account Number">
+                    <apex:inputField value="{!eachAcc.AccountNumber}"/>
+                </apex:column>  
+
+                <apex:column headerValue="Account Rating">
+                    <apex:inputField value="{!eachAcc.Rating}"/>
+                </apex:column>  
+            
+            </apex:pageBlockTable>
+            
+        </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}" />
+        		<apex:commandButton value="Reload" action="{!reload}" />
+                
+        		<!--<apex:commandButton value="Reload" oncomplete="window.top.location.reload()" />-->
+            </apex:pageBlockButtons>
+        
+        </apex:pageBlock>
+
+    </apex:form>
+    
+    
+    
+</apex:page>

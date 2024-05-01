@@ -1,0 +1,15 @@
+<template>
+
+    <lightning-card title="All Accounts">
+
+        <lightning-combobox onchange={handleOnChange}
+                            options={allOptions}
+                            placeholder="Select an Account !"
+                         
+        >
+        </lightning-combobox>
+    </lightning-card>
+
+    <c-acc-combobox-con-datatable-child acc-record-id={accId}></c-acc-combobox-con-datatable-child>
+    
+</template>

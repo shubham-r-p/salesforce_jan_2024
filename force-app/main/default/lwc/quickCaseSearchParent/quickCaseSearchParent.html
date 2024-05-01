@@ -1,0 +1,29 @@
+<template>
+
+    <lightning-card title="Quick case search">
+
+        <div class="slds-p-around_medium">
+
+            <lightning-input
+                            type="number"
+                            onchange={handleCaseNoChange}
+                            label="Search Case"
+                            placeholder="Enter case number !"
+            
+            ></lightning-input>
+
+            <lightning-button
+                            label="Search"
+                            onclick={handleSearch}
+            >
+            </lightning-button>
+
+        </div>
+
+        <hr>
+
+        <c-quick-case-search-child></c-quick-case-search-child>
+
+    </lightning-card>
+    
+</template>

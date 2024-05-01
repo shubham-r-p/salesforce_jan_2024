@@ -1,0 +1,244 @@
+<template>
+
+
+
+    <span class="slds-grid">
+        <span class="slds-col">
+            <span>
+
+                <lightning-card >
+
+                    <div class="slds-p-around_large">
+                        <lightning-input type="search" label="Enter Contact Name"></lightning-input>
+                    </div>
+            
+                <div class="slds-p-around_large">
+            
+                    <!-- <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                            <span>
+                                <b><b>Jon Snow</b></b>
+                                <br>
+                                hs@gmail.com
+                            </span>
+                        </div>
+                        <div class="slds-col">
+                            <span>
+                            <lightning-button label="View"></lightning-button>
+                            </span>
+                        </div>
+                    </div>
+    
+                    <hr> -->
+    
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-p-around_large">
+                            <span>
+
+                                
+                                <b><b>jon snow</b></b>
+                                <br>
+                                js@gmail.com
+                            </span>
+                        </div>
+                        <div class="slds-col slds-p-around_large">
+                            <span>
+                            <lightning-button class="slds-m-left_xx-large" label="View"></lightning-button>
+                            </span>
+                        </div>
+
+                        <hr>
+
+                    </div>
+                
+                </div>
+
+                <!-- <div class="slds-grid">
+                    <div class="slds-col">
+                    <span>
+                    
+                        <div>
+                            <b><b>Jon Snow</b></b>
+                            <br>
+                            hs@gmail.com
+                        </div>
+                    
+                        <br> -->
+
+                    <!-- </span>
+                    </div>
+                    <div class="slds-col">
+                    <span> -->
+                    
+                        <!-- <div>
+                            <b><b>Jon Snow</b></b>
+                            <br>
+                            hs@gmail.com
+                        </div>
+
+                    
+                    </span>
+                    </div>
+                    </div> -->
+
+                </lightning-card>
+
+            </span>
+        </span>
+        <span class="slds-col">
+            <span>
+
+                <lightning-card>
+
+                    <div class="slds-p-around_large">
+
+                        <lightning-record-view-form density="compact" object-api-name="Contact" record-id="0035i00000FjSPCAA3" title="Contact Read Only">
+
+                            <lightning-output-field field-name="Name"></lightning-output-field>
+                            <lightning-output-field field-name="Phone"></lightning-output-field>
+                            <lightning-output-field field-name="Email"></lightning-output-field>
+                            <lightning-output-field field-name="MailingAddress"></lightning-output-field>
+            
+                        </lightning-record-view-form>
+
+                    </div>
+
+            </lightning-card>
+
+            </span>
+        </span>
+
+    </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="slds-grid slds-gutters">
+    <div class="slds-col">
+        <span>
+
+            <lightning-card>
+
+
+            <br>
+            
+            <div>
+            
+                <div class="slds-grid slds-gutters slds-p-around_large">
+                    <div class="slds-col">
+
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button label="View"></lightning-button>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="slds-grid slds-gutters slds-p-around_large">    
+                    <div class="slds-col">
+
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button label="View"></lightning-button>
+                    </div>
+                </div>
+            
+            </div>
+
+        </lightning-card>
+
+
+        </span>
+    </div>
+
+        <lightning-card>
+
+
+    <div class="slds-col">
+        <span>
+
+
+
+
+        </span>
+
+
+    </div>
+
+</lightning-card>
+
+
+</div> -->
+
+
+
+
+
+
+
+
+
+            <!-- <div class="slds-card__body">
+                <table
+                    class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered slds-table_fixed-layout"
+                    role="grid" aria-label="Example table in a Card">
+                    
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="" scope="col">
+                                <div class="slds-truncate">Lead Name</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate">Email</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate">Address</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate">Action</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="slds-hint-parent" for:each={lstLeads} for:item="led" key={led.Id}>
+                            <td role="gridcell">
+                                <div class="slds-truncate">{led.Name}</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="slds-truncate">{led.Email}</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="slds-truncate">{led.Address}</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="slds-truncate"><a href={led.URL} target="_blank" tabindex="-1">View</a></div>
+                            </td>
+                        </tr>
+                    </tbody>
+    
+                </table>
+            </div> -->
+
+
+
+
+
+    
+</template>

@@ -1,0 +1,24 @@
+<template>
+
+    <template if:true={shoeRecViewForm}>
+    <lightning-card title="Subscribe (Sub) Component">
+
+        <lightning-record-view-form object-api-name="Account" record-id={recordId}>
+
+            <lightning-output-field field-name="Name"></lightning-output-field>
+            <lightning-output-field field-name="Id"></lightning-output-field>
+
+        </lightning-record-view-form>
+
+    </lightning-card>
+</template>
+
+    <lightning-card title="Subscribe (Sub) Component">
+
+        <p class="slds-text-align_center">
+            count : <lightning-formatted-number value={counter}></lightning-formatted-number>
+        </p>
+
+    </lightning-card>
+    
+</template>

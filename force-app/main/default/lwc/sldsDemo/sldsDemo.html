@@ -1,0 +1,118 @@
+<template>
+
+
+    <lightning-card>
+
+
+        <div class="slds-grid slds-wrap slds-gutters slds-grid_align-space slds-m-around_medium">
+            <div class="slds-col slds-grid_align-space s slds-size_1-of-1 slds-large-size_4-of-12">
+                <div style="width: 100%;">
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        style="width: 100%; border-radius: 10px 10px 0 0; display: block;">
+                </div>
+                <div style="padding: 20px;">
+                    <div class="slds-text-heading_large">Magalarva</div>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut vitae hic distinctio, iusto
+                        error aliquid nulla aspernatur odit, voluptatum cum eos at, quod asperiores voluptatibus.
+                        Sed odio explicabo fuga facere.</p>
+                    <b>by Lorem ipsum dolor</b>
+                </div>
+            </div>
+            <div class="slds-col slds-grid_align-space s slds-size_1-of-1 slds-large-size_4-of-12">
+                <div style="width: 100%;">
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        style="width: 100%; border-radius: 10px 10px 0 0; display: block;">
+                </div>
+                <div style="padding: 20px;">
+                    <div class="slds-text-heading_large">Magalarva</div>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut vitae hic distinctio, iusto
+                        error aliquid nulla aspernatur odit, voluptatum cum eos at, quod asperiores voluptatibus.
+                        Sed odio explicabo fuga facere.</p>
+                    <b>by Lorem ipsum dolor</b>
+                </div>
+            </div>
+            <div class="slds-col slds-grid_align-space slds-size_1-of-1 slds-large-size_4-of-12">
+                <div style="width: 100%;">
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        style="width: 100%; border-radius: 10px 10px 0 0; display: block;">
+                </div>
+                <div style="padding: 20px;">
+                    <div class="slds-text-heading_large">Magalarva</div>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut vitae hic distinctio, iusto
+                        error aliquid nulla aspernatur odit, voluptatum cum eos at, quod asperiores voluptatibus.
+                        Sed odio explicabo fuga facere.</p>
+                    <b>by Lorem ipsum dolor</b>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+
+        <!-- <div class="slds-m-around_medium">
+            <div class="slds-grid slds-grid_align-spread slds-m-top_xx-large">
+                <h1>Thought Leadership</h1>
+                <div>
+                    <button onclick={handlePreviousBtn}>Previous</button>
+                    <button onclick={handleNextBtn}>Next</button>
+                </div>
+            </div>
+            
+            <div>
+                <div>
+                    <div class="slds-grid slds-gutters card-container" style={cardContainerStyle}>
+                        <template for:each={cardsToShow} for:item="card">
+                            <div key={card.id} class="card slds-m-around_small slds-col slds-size_1-of-4">
+                                <div style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; border-radius: 8px;">
+                                    <img src={card.img} style="border-radius: 8px 8px 0px 0px;">
+                                    <div class="slds-p-around_small">
+                                        <span><b>{card.title}</b></span>  
+                                        <p>{card.content}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+         <div class="slds-m-around_medium">
+            <div class="slds-grid slds-grid_align-spread slds-m-top_xx-large">
+                <h1>Thought Leadership</h1>
+                <div>
+                    <button onclick={handlePreviousBtn}>Previous</button>
+                    <button onclick={handleNextBtn}>Next</button>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <div class="slds-grid slds-gutters card-container">
+                        <template for:each={cardsToShow} for:item="card">
+                            <div key={card.id} class="card slds-m-around_small slds-col slds-size_1-of-4">
+                                <div style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; border-radius: 8px; transform: translateX(0);">
+                                    <img src={card.img} style="border-radius: 8px 8px 0px 0px">
+                                    <div class="slds-p-around_small">
+                                        <span><b>{card.title}</b></span>  
+                                        <p>{card.content}</p>
+                                    </div>
+                            </div>
+                        </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+         <!-- <div class="slds-text-align_center slds-var-p-around_medium">
+                <template for:each={slidesData} for:item="slide">
+                    <span key={slide.index} class={slide.dotClass} data-id={slide.index} onclick={showSlide}></span>
+                </template>
+            </div>  -->
+
+        </div> 
+
+
+
+    </lightning-card>
+    
+</template>

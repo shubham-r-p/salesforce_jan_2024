@@ -1,0 +1,21 @@
+<template>
+
+    <lightning-card title="If Else Demo">
+
+        <lightning-button variant="neutral" onclick={handleButtonClick} label={myLabel}>
+        </lightning-button>
+
+    </lightning-card>
+
+
+    <template if:true={ShowCard}>
+
+        <lightning-card title="if:true|false Demo">
+
+            {myName}
+
+        </lightning-card>
+
+    </template>
+
+</template>

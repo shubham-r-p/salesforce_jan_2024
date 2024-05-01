@@ -1,0 +1,59 @@
+.THIS * {
+    color: white;
+    --sds-c-icon-color-foreground-default: white;
+  }
+  
+  
+  .THIS .header {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
+    z-index: 1;
+  }
+  
+  .THIS .stage-left__subMenu {
+    text-indent: 15%;
+  }
+  
+  .THIS .stage-left a:not(.button) {
+    display: block;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    background: transparent;
+    padding: 0.25rem;
+    transition: background 0.05s linear;
+  }
+  
+  .THIS .stage-left a:not(.button):hover,
+  .THIS .stage-left a:not(.button):focus {
+    background: #061c3f;
+    color: white;
+  }
+  
+  
+  .THIS .stage-left a:not(.button):active {
+    box-shadow: inset 0px 3px 3px 0px rgba(0, 0, 0, 0.16), 0 0 3px #0070d2;
+  }
+  
+  .THIS .menu-item , .THIS .sub-menu-items , .THIS .sub-menu{
+    min-height: 2rem;
+    font-size: medium;
+    margin: 0.5rem;
+  }
+  
+  .THIS .hide {
+    display: none !important;
+  }
+  
+  .THIS .rotate-icon {
+    transform: rotate(90deg);
+  }
+  
+  
+  .THIS .active:hover {
+    background-color: #005379 !important;
+    box-shadow: inset 0px 3px 3px 0px rgba(0, 0, 0, 0.16), 0 0 3px #0070d2;
+    transition: 0.5s ease;
+  }
+
+ .THIS .alignLogo {
+    display: flex;
+}

@@ -1,0 +1,18 @@
+/* hiding css */
+.slds-form-element__row lightning-textarea {
+    visibility: hidden;
+    position: absolute;
+}
+
+.slds-form-element__row lightning-input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.action-buttons {
+    margin-top: 0.5rem;
+}
+
+.slds-coordinates {
+    display: none;
+}

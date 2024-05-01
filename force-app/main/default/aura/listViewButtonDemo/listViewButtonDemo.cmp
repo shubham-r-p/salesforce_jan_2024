@@ -1,0 +1,8 @@
+<!--<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" > --> 
+
+        <aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride,force:lightningQuickAction" access="global" >
+        <!--<c:lWCComponent2 aura:id="lWCComponent2"></c:lWCComponent2> --> 
+        
+    <c:buttonActionDemo/>
+        
+</aura:component>

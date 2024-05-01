@@ -1,0 +1,46 @@
+<template>
+
+
+    <lightning-card title="Related Contacts">
+
+        <div align="center">
+            <lightning-button variant="success" label={buttonName} onclick={handleButtonClick}></lightning-button>
+        </div>
+
+    </lightning-card>
+
+
+    <template if:true={tableVisibility} >
+
+        <lightning-card title="All Contacts">
+
+            <lightning-input type="search"
+                             onchange={handleSearchChange}
+                             value={searchKeyword}
+            
+            ></lightning-input>
+
+            <lightning-datatable data={data}
+            columns={columns}
+            key-field="Id"
+            onrowselection={getSelectedRows}
+            onrowaction={handleRowActions}
+            
+>
+
+
+</lightning-datatable>
+
+
+
+
+
+        </lightning-card>
+
+
+    </template>
+
+
+
+    
+</template>

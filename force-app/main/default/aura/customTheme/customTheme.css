@@ -1,0 +1,19 @@
+/* to divide the container to 20% and 80% */
+.THIS .grid-container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+/* to set fixed nav bar */
+.THIS .custom-side-bar {
+    height: 100vh;
+    max-height: 100vh;
+    background-color: #006594;
+    text-align: left;
+    overflow: visible;
+    overflow-y: auto;
+    position: sticky;
+    top : 0;
+    left: 0;
+    box-sizing: border-box;
+}

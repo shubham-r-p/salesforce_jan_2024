@@ -1,0 +1,38 @@
+.shadow {
+    /* box-shadow: 5px 10px 18px #460dcc; */
+    box-shadow: 1px 4px 10px #b9c0bb;
+    border-radius: 0.4rem;
+}
+
+.name {
+    color: rgb(8, 8, 8);
+    font-family: 'Trebuchet MS', sans-serif;
+
+}
+
+.nameAllin {
+    margin-right: 20px;
+}
+
+.scrolable {
+    max-height: 25rem;
+    overflow-x: scroll;
+}
+
+/* .scrolable {
+    overflow: auto; 
+} */
+
+/* Hide scrollbar for Chrome, Safari, and newer versions of Edge */
+.scrolable::-webkit-scrollbar {
+    width: 0.5em; /* Set the width of the scrollbar */
+}
+
+.scrolable::-webkit-scrollbar-thumb {
+    background-color: #ffffff; /* Set the color of the scrollbar thumb */
+}
+
+
+.selectedacc {
+    background: lightgray;
+}

@@ -1,0 +1,19 @@
+<template>
+
+    <template if:true={tableVisible}>
+    <lightning-card title="Related Contacts">
+
+        <lightning-datatable    columns={allColumns}
+                                data={allData}
+                                key-field="Id"
+                                hide-checkbox-column="true"
+                                        
+        >
+
+        </lightning-datatable>
+
+
+    </lightning-card>
+</template>
+    
+</template>

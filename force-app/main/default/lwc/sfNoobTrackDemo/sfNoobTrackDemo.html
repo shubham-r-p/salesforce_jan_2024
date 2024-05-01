@@ -1,0 +1,24 @@
+<template>
+
+    <lightning-card title="Track Demo">
+
+        <div class="slds-p-around_large">
+
+            <lightning-input name="fname" label="First Name" onchange={handleChange}></lightning-input>
+            <lightning-input name="lname" label="Last Name" onchange={handleChange}></lightning-input>
+            <lightning-input type="number" name="Phone" label="Phone" onchange={handleChange}></lightning-input>
+
+            <br>
+
+                <b>First Name => {personInfo.fName}</b> <br>
+                <b>Last Name  => {personInfo.lName}</b> <br>
+                <b>Phone      => {personInfo.phone}</b>  <br>
+        </div>
+
+
+
+
+
+    </lightning-card>
+    
+</template>

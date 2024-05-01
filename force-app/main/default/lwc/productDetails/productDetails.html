@@ -1,0 +1,52 @@
+<template>
+
+    <lightning-card>
+
+        <!-- search box -->
+        <div class="slds-grid slds-gutters slds-form-element slds-p-bottom_large slds-grid_align-center">
+
+            <div class="slds-col slds-size_1-of-4">
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+                    <lightning-input class="slds-col" type="search" label="Search Products"
+                        placeholder="Search product name..." onchange={searchHandle}>
+                    </lightning-input>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-8">
+                <lightning-combobox name="progress" value={value} label="Select Category" placeholder="Select category"
+                    options={options} onchange={handleComboboxChange}>
+                </lightning-combobox>
+            </div>
+
+        </div>
+
+
+        <template lwc:if={filteredProducts}>
+            <div class="slds-grid slds-wrap slds-gutters slds-grid_align-space">
+                <template for:each={filteredProducts} for:item="Product">
+        
+                    <div key={Product.id}
+                        class="slds-col slds-grid_align-space slds-size_1-of-4 slds-m-around_x-small shadow slds-text-align_center slds-p-vertical_small fixed-size-card">
+                        <div data-recid={Product.id} onclick={handleClick} style="cursor: pointer;">
+                            <img src={Product.thumbnail} alt="User Image" class="fixed-size-image text-center"
+                                style="border-radius: 0.3rem;" />
+                            <div class="card-body slds-p-top_medium">
+                                <p class="card-text"><b>{Product.brand}</b></p>
+                                <h5 class="text-center"><b>{Product.title}</b></h5>
+                                <h5 class="text-center">Rating - <i>{Product.rating}</i></h5>
+                                <p class="card-text"><b>$ 12345</b></p>
+                                <p class="card-text">M.R.P. : $ {Product.price}</p>
+                                <p class="card-text">Discount (%) - {Product.discountPercentage}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </template>
+            </div>
+        </template>
+
+    <template lwc:if={showNoItemsMsg}><h1 class="slds-text-align_center slds-text-color_error slds-text-font_monospace slds-text-heading_large">No items found !</h1></template>
+
+    </lightning-card>
+
+</template>

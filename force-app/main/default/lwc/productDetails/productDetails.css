@@ -1,0 +1,26 @@
+.shadow {
+    /* box-shadow: 5px 10px 18px #460dcc; */
+    box-shadow: 1px 4px 10px #b9c0bb;
+    border-radius: 0.4rem;
+}
+
+
+.fixed-size-image {
+    width: 200px; /* Set your desired width */
+    height: 150px; /* Set your desired height */
+    object-fit: contain; /* This property ensures the image maintains its aspect ratio and covers the specified dimensions */
+}
+
+
+.fixed-size-card {
+    width: 250px; /* Set your desired width */
+    min-height: 315px;
+    max-height: 315px; /* Set your maximum desired height */
+    /* display: flex; */
+    flex-direction: column;
+}
+
+.custom-width-center {
+    margin: auto;
+    /* max-width: 25rem */
+}

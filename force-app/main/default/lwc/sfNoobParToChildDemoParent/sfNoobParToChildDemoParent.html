@@ -1,0 +1,40 @@
+<template>
+
+    <lightning-card title="P->C Parent">
+
+        <lightning-input
+                        label="Enter No"
+                        type="number"
+                        value={inputVal}
+                        onchange={handleInputChange}
+                        max="999"
+                        min="0"
+                        placeholder="********Enter Num******"
+                        class="slds-p-horizontal_large"
+        >
+        </lightning-input>
+
+        <hr>
+
+        <div align="center">
+
+        <lightning-button class="slds-p-horizontal_large" label="33" icon-name="utility:add" onclick={handleAddition}>
+        </lightning-button>
+        &nbsp;
+        <lightning-button class="slds-p-horizontal_large" label="66" icon-name="utility:add" onclick={handleAddition}>
+        </lightning-button>
+        &nbsp;
+        <lightning-button class="slds-p-horizontal_large" label="99" icon-name="utility:add" onclick={handleAddition}>
+        </lightning-button>
+
+        <hr>
+
+        <lightning-button label="RESET" icon-name="utility:refresh" onclick={resetHandler} ></lightning-button>
+
+    </div>
+
+        <c-sf-noob-par-to-child-demo-child input-val={inputVal}></c-sf-noob-par-to-child-demo-child>
+
+    </lightning-card>
+    
+</template>

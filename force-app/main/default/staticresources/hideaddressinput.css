@@ -1,0 +1,13 @@
+.slds-scope .slds-form_compound .slds-form-element__row lightning-textarea {
+    visibility: hidden;
+    position: absolute;
+}
+.slds-scope .slds-form_compound .slds-form-element__row lightning-input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.slds-scope .slds-accordion__summary-heading .slds-button:focus {
+    text-decoration: none !important;
+    box-shadow: none;
+}

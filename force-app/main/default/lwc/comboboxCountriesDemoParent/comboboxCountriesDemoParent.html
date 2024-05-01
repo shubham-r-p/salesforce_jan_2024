@@ -1,0 +1,55 @@
+<template>
+
+    <lightning-card icon-name="standard:lightning_component" title="Parent Comp">
+
+
+        <div class="slds-grid slds-wrap slds-p-around_large">
+        
+            <div class="slds-col slds-size_10-of-12">
+                <lightning-combobox placeholder="Please select option..." label="All Countries" options={comboboxOptions}
+                    onchange={handleChange}>
+        
+                </lightning-combobox>
+            </div>
+
+        
+
+            <div class="slds-col slds-size_2-of-12 slds-var-m-top_large slds-p-left_xx-large">
+                <lightning-button label="Show" variant="success" onclick={handleButtonClick} class=""></lightning-button>
+            </div>
+        
+        </div>
+
+        
+
+
+
+        <!--<div class="slds-grid slds-wrap" >
+
+            <div class="slds-col slds-size_6-of-12">
+
+
+                <lightning-combobox  placeholder="Please select option..." label="All Countries"
+                options={comboboxOptions} onchange={handleChange} > 
+    
+            </lightning-combobox>
+                
+            </div>
+
+            <div class="slds-col slds-size_6-of-12">
+
+                <lightning-button label="Show" variant="success" onclick={handleButtonClick}></lightning-button>
+
+            </div>
+        </div>-->
+
+        <hr>
+
+        <c-combobox-countries-demo-child></c-combobox-countries-demo-child>
+
+    </lightning-card>
+
+                    <!-- class="slds-p-horizontal_small" -->
+
+
+</template>

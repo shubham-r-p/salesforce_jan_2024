@@ -1,0 +1,23 @@
+<template>
+
+
+    <lightning-card title={contactCount}>
+
+        <div class="slds-p-around_large" >
+
+            <h1 for:each={arrayContacts} for:item="con" key={Contact}>
+
+                {con.Name}&nbsp;Email&nbsp;-&nbsp;{con.Email}
+            </h1>
+
+
+        
+    </div>
+
+    </lightning-card>
+
+
+
+
+    
+</template>

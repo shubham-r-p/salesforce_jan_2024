@@ -1,0 +1,132 @@
+<apex:page controller="contactTableSearchBoxController" showHeader="false">
+    
+    <style type="text/css">
+        
+        h1{
+        font-size: 40px;
+        } 
+        
+        p{
+        font-size: 15px;
+        }   
+        
+        .searchTextSize{
+        font-size: 100px;
+        }
+        
+        .myClass{
+        color:White !important;
+        background:#ff7d4d !important;
+        border: 3px OrangeRed;
+        width: 8%;
+        height: 35px;
+        }
+        
+        .searchBoxBorder{
+        
+        border: 2px solid green;
+        width: 33%;
+        height: 35px;
+        }
+        
+        .recordSelectorBorder{
+        
+        border: 2px solid green;
+        width: 10%;
+        height: 35px;
+        }
+        
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+        }
+        
+    </style>
+    
+    
+    
+    <apex:form >
+            <apex:pageBlock id="noOfRec">
+                
+                <p><center>
+                <apex:actionStatus id="loader">
+                    <apex:facet name="start">
+                        <img src="/img/loading32.gif" width="25" height="25" />
+                    </apex:facet>
+                    </apex:actionStatus> </center></p>
+                
+                <h1>&nbsp;&nbsp;All Contacts</h1>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;Search</p>   
+                
+                <br/>            
+                
+                <apex:inputText value="{!searchText}" html-placeholder="Enter Contact Name or Email here" styleClass="searchBoxBorder"/>
+                &nbsp;
+                <apex:commandButton action="{!searchContact}" value="Search" reRender="noOfRec" styleClass="myClass" status="loader" />
+                
+                
+                <apex:selectList value="{!blockSize}" multiselect="false" size="1" styleClass="recordSelectorBorder">
+                    
+                    <apex:actionSupport event="onchange" action="{!searchContact}" reRender="noOfRec" status="loader" />
+                    
+                    <apex:selectOption itemValue="5" itemLabel="5" />
+                    <apex:selectOption itemValue="10" itemLabel="10"/>
+                    <apex:selectOption itemValue="15" itemLabel="15" />
+                    <apex:selectOption itemValue="20" itemLabel="20"/>
+                    <apex:selectOption itemValue="100" itemLabel="100" />
+                </apex:selectList> 
+                
+                
+            
+        
+            
+            <body>
+                <table width="100%" >
+                    
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Account Name</th>
+                        <th>Phone</th>
+                    </tr>    
+                    
+                    <apex:repeat value="{!lstContact}" var="eachCon" >
+                        
+                        <tr>
+                            <td>{!eachCon.Name}</td>
+                            <td>{!eachCon.Email}</td>
+                            <td>{!eachCon.Account.Name}</td>
+                            <td>{!eachCon.Phone}</td>
+                            <!--TYPE <td>{!eachCon.Phone}</td> -->
+                        </tr>
+                        
+                    </apex:repeat>
+                    
+                </table>
+            </body>  
+            
+            
+        </apex:pageBlock>
+        
+        <center>
+            
+            <apex:commandButton action="{!firstButton}" reRender="noOfRec" value="First" disabled="{!Firstbutton}"/>
+            <apex:commandButton action="{!previousButton}" reRender="noOfRec" value="Previous" disabled="{!Previousbutton}" />
+            <apex:commandButton action="{!nxt}" reRender="noOfRec" value="Next" disabled="{!Nextbutton}"/>
+            <apex:commandButton action="{!lst}" reRender="noOfRec" value="Last" disabled="{!Lastbutton}" />
+            
+        </center>
+        
+        
+        <br/>
+        <br/>
+        <br/>
+        
+        
+    </apex:form>
+    
+    
+    
+    
+</apex:page>

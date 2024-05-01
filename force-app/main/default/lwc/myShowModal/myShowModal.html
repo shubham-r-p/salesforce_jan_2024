@@ -1,0 +1,61 @@
+<template>
+    <lightning-modal-header label={content.brand}>{content.title}</lightning-modal-header>
+
+    <lightning-modal-body>
+
+
+        <div class="slds-grid slds-wrap">
+        
+            <div class="slds-col slds-size_1-of-2">
+                
+                <!-- <img src={content.thumbnail} alt="User Image" class="fixed-size-image text-center"
+                    style="border-radius: 0.3rem;" /> -->
+                    
+                    <lightning-carousel scroll-duration="2" class="">
+                        <template for:each={carouselImages} for:item="image">
+                            <lightning-carousel-image class="fixed-size-image" key={image} src={image}>
+                            </lightning-carousel-image>
+                        </template>
+                    </lightning-carousel>
+
+            </div>
+
+            <div class="slds-col slds-size_1-of-2 slds-p-around_large">
+
+                <!-- <div class="card-body slds-p-top_medium"> -->
+                    <p class="card-text point-cur"><b>{content.brand}</b></p>
+                    <h5 class="text-center point-cur"><b>{content.title}</b></h5>
+                    <h5 class="text-center">Rating - <i>{content.rating}</i></h5>
+                    <p class="card-text"><b>$ 12345</b></p>
+                    <p class="card-text">M.R.P. : $ {content.price}</p>
+                    <p class="card-text">Discount (%) - {content.discountPercentage}</p>
+                <!-- </div> -->
+
+            </div>
+
+        </div>
+
+
+
+        <!-- <div
+            class="slds-col slds-grid_align-space slds-size_1-of-4 slds-m-around_x-small shadow slds-text-align_center slds-p-vertical_small fixed-size-card">
+            <div data-recid={content.id} onclick={handleClick}>
+                <img src={content.thumbnail} alt="User Image" class="fixed-size-image text-center"
+                    style="border-radius: 0.3rem;" />
+                <div class="card-body slds-p-top_medium">
+                    <p class="card-text point-cur"><b>{content.brand}</b></p>
+                    <h5 class="text-center point-cur"><b>{content.title}</b></h5>
+                    <h5 class="text-center">Rating - <i>{content.rating}</i></h5>
+                    <p class="card-text"><b>$ 12345</b></p>
+                    <p class="card-text">M.R.P. : $ {content.price}</p>
+                    <p class="card-text">Discount (%) - {content.discountPercentage}</p>
+                </div>
+            </div>
+        </div> -->
+
+    </lightning-modal-body>
+
+    <lightning-modal-footer>
+        <lightning-button label="OK" onclick={handleOkay}></lightning-button>
+    </lightning-modal-footer>
+</template>

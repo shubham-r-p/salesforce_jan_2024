@@ -1,0 +1,26 @@
+<template>
+
+    <template if:true={showDatatables}>
+
+        <lightning-card title="Opp-Con DataTable Child">
+
+            <lightning-datatable title="All Contacts" key-field="Id" data={contactsData} columns={conColumns}>
+
+
+            </lightning-datatable>
+
+            <hr>
+
+            <lightning-datatable title="All Opportunities" key-field="Id" data={opportunitiesData} columns={oppColumns}>
+
+
+            </lightning-datatable>
+
+
+        </lightning-card>
+
+
+
+    </template>
+
+</template>

@@ -1,0 +1,17 @@
+:root {
+    /* Reset section spacing properties */
+    --dxp-c-section-content-spacing-inline-end: 0;
+    --dxp-c-section-content-spacing-inline-start: 0;
+    --dxp-c-section-content-spacing-inline-end-mobile: 0;
+    --dxp-c-section-content-spacing-inline-start-mobile: 0;
+
+    /* Reset header spacing properties */
+    --dxp-c-header-container-spacing-block-start: 0;
+    --dxp-c-header-container-spacing-inline-end: 0;
+    --dxp-c-header-container-spacing-block-end: 0;
+    --dxp-c-header-container-spacing-inline-start: 0;
+    --dxp-c-header-container-spacing-block-start-mobile: 0;
+    --dxp-c-header-container-spacing-inline-end-mobile: 0;
+    --dxp-c-header-container-spacing-block-end-mobile: 0;
+    --dxp-c-header-container-spacing-inline-start-mobile: 0;
+}

@@ -1,0 +1,26 @@
+<aura:component implements="forceCommunity:themeLayout">
+    <!-- init method get's the user data -->
+    <aura:attribute name="footer" type="Aura.Component[]" />
+    <div>
+        <div class="grid-container">
+            <div class="custom-side-bar">
+                <!-- retailNavigation component is rendered if the user.Portal_Nav_Bar__c is retail menu -->
+              
+                    <c:customVerticalNavigation/>
+                    <!-- <c:retailMenuNavigationComponent userdetails="{!v.userdetails}" designerNumber="{!v.designerNumber}" navigationLinkSetId="{!v.navigationLinkSetId}"/> -->
+                    <!-- customNavigation component is rendered if the user.Portal_Nav_Bar__c is not retail menu -->
+                    <!-- <aura:set attribute="else"> -->
+                        <!-- <c:customNavigationComponent userdetails="{!v.userdetails}" designerNumber="{!v.designerNumber}"/> -->
+                    <!-- </aura:set> -->
+               
+            </div>
+            <!-- for holding the body -->
+            <div>
+                {!v.body}
+            </div>
+            <footer id="footer">
+                {!v.footer}
+            </footer>
+        </div>
+    </div>
+</aura:component>

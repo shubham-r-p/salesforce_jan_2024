@@ -1,0 +1,19 @@
+/* .slds-scope .slds-form_compound .slds-form-element__row lightning-textarea {
+    visibility: hidden;
+    position: absolute;
+}
+.slds-scope .slds-form_compound .slds-form-element__row lightning-input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.slds-scope .slds-accordion__summary-heading .slds-button:focus {
+    text-decoration: none !important;
+    box-shadow: none;
+} */
+
+
+#input-78, #input-80, #input-82, #input-84, #input-86 {
+    visibility: hidden;
+    position: absolute;
+}

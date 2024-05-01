@@ -1,0 +1,23 @@
+<template>
+
+
+    <lightning-card title="Parent Component" icon-name="utility:wellness">
+
+        <div class="slds-p-around_large">
+
+            <lightning-input name="fn" label="First Name" onchange={handleName}></lightning-input>
+            <lightning-input name="ln" label="Last Name" onchange={handleName}></lightning-input>
+
+        </div>
+
+
+
+    </lightning-card>
+
+
+
+    <c-child-comp-ibirds-org first-name={fname} last-name={lname}></c-child-comp-ibirds-org>
+
+
+    
+</template>

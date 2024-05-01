@@ -1,0 +1,28 @@
+<template>
+
+    <lightning-card icon-name="standard:lightning_component" title="Child Comp">
+
+        <template if:true={displayData}>
+
+            <div class="slds-grid slds-wrap slds-p-around_large" >
+                <div class="slds-col slds-size_6-of-12">
+                    <img style="max-height: 150px" alt="Image on T.O." src={displayData.img}/>   
+                </div>
+
+                <hr>
+                <div class="slds-col slds-size_6-of-12">
+                    <b>Country :</b> {displayData.country}<br>
+                    <b>Capital :</b> {displayData.capital}<br>
+                    <b>Population :</b> {displayData.population}<br>
+                </div>
+                
+            </div>
+           
+
+        </template>
+
+
+
+    </lightning-card>
+    
+</template>

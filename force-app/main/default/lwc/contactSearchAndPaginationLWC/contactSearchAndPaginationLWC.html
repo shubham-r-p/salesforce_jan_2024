@@ -1,0 +1,106 @@
+<template>
+    <lightning-card title="Contact Search" icon-name="custom:custom98">
+        <div class="slds-var-m-around_medium">
+            <lightning-layout horizontal-align="space">
+                <lightning-layout-item flexibility="auto" size="4">
+                    <lightning-input type="search" class="searchText" placeholder="Search Contact..."
+                        ></lightning-input>
+                </lightning-layout-item>&nbsp;
+                <lightning-layout-item flexibility="auto" size="7">
+                    <div style="margin-top: 19px;">
+                        <lightning-button label="Search" icon-name="utility:search" onclick={handleSearch} variant="brand-outline">
+                        </lightning-button>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="1">
+                    <div>
+                        <lightning-combobox
+                            options={pageNumbers}
+                            value={pageSize}
+                            onchange={handlePageSize}
+                        ></lightning-combobox>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+            <br />
+            <!-- <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped" aria-labelledby="element-with-table-label other-element-with-table-label">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Opportunity Name">Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Email">Email</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Account Name">Account Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Close Date">Phone</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Type">Type</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={contactList} for:item="contact">
+                        <tr class="slds-hint-parent" key={contact}>
+                            <th data-label="Name" scope="row">
+                                <div class="slds-truncate" title={contact.Name}>
+                                    {contact.Name}
+                                </div>
+                            </th>
+                            <td data-label="Email">
+                                <div class="slds-truncate" title={contact.Email}>
+                                    <lightning-formatted-text value={contact.Email} linkify></lightning-formatted-text>
+                                </div>
+                            </td>
+                            <td data-label="Account Name">
+                                <div class="slds-truncate" title={contact.AccountName}>
+                                    {contact.AccountName}
+                                </div>
+                            </td>
+                            <td data-label="Phone">
+                                <div class="slds-truncate" title={contact.Phone}>
+                                    {contact.Phone}
+                                </div>
+                            </td>
+                            <td data-label="Type">
+                                <div class="slds-truncate" title={contact.Type__c}>
+                                    {contact.Type__c}
+                                </div>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table> -->
+            <lightning-datatable 
+                data={contactList} 
+                columns={columns} 
+                hide-checkbox-column 
+                key-field="Id">
+            </lightning-datatable>
+            <br>
+            <lightning-layout horizontal-align="space">
+                <lightning-layout-item size="2" flexibility="auto"  >
+                    <b><p class="slds-m-top_small">Showing {currentPage} of {totalPages}</p></b>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" style="float: right;" >
+                    <lightning-button label="First" variant="brand-outline" icon-name="utility:jump_to_left" onclick={handleFirst} disabled={showPreviousButton}>
+                    </lightning-button>&nbsp;
+                    <lightning-button label="Previous" variant="brand-outline" icon-name="utility:chevronleft" icon-position="left" onclick={handlePrevious} disabled={showPreviousButton}>
+                    </lightning-button>&nbsp;
+                    <lightning-button label="Next" variant="brand-outline" icon-name="utility:chevronright" icon-position="right" onclick={handleNext} disabled={showNextButton}> 
+                    </lightning-button>&nbsp;
+                    <lightning-button label="Last" variant="brand-outline" icon-name="utility:jump_to_right" icon-position="right" onclick={handleLast} disabled={showNextButton}>
+                    </lightning-button>&nbsp;
+                    <template for:each={updateButtonList} for:item="buttonNumber">
+                        <lightning-button key={buttonNumber} variant="brand-outline" label={buttonNumber} value={buttonNumber} onclick={handleGoToNumber}>
+                        </lightning-button>&nbsp;
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

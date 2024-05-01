@@ -1,0 +1,65 @@
+<template>
+
+
+
+    <lightning-card title="Record Edit Form">
+        <div class="slds-p-around__large">
+
+            <lightning-record-edit-form object-api-name={objectApiName} record-id={recordId} onsuccess={handleSuccess} onerror={handleError}>
+
+                    <lightning-input-field field-name="Name"></lightning-input-field>
+                    <lightning-input-field field-name="AccountNumber"></lightning-input-field>
+                    <lightning-input-field field-name="Phone"></lightning-input-field>
+                    <lightning-input-field field-name="Email"></lightning-input-field>
+                    <lightning-input-field field-name="Active__c"></lightning-input-field>
+
+                    <lightning-button type="submit" label="Save"></lightning-button>
+
+            </lightning-record-edit-form>
+
+        </div>
+    </lightning-card>
+
+
+    <hr>
+
+
+
+    <lightning-card title="Record View Form">
+        <div class="slds-p-around_large">
+
+            <lightning-record-view-form object-api-name={objectApiName} record-id={recordId} >
+
+                    <lightning-output-field field-name="Name"></lightning-output-field>
+                    <lightning-output-field field-name="AccountNumber"></lightning-output-field>
+                    <lightning-output-field field-name="Phone"></lightning-output-field>
+                    <lightning-output-field field-name="Email"></lightning-output-field>
+                    <lightning-output-field field-name="Active__c"></lightning-output-field>
+
+            </lightning-record-view-form>
+
+        </div>
+    </lightning-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</template>

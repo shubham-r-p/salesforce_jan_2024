@@ -1,0 +1,31 @@
+<template>
+
+    <lightning-card>
+
+        <div class="slds-p-around_large">
+
+            <div>
+                Result ==> {result}
+            </div>
+
+            <c-calculator-demo-child onfieldvalue={handleCalculation}></c-calculator-demo-child>
+
+            <lightning-button label="+" data-name="Sum" onclick={handleButtonClick}></lightning-button>
+            <lightning-button label="-" data-name="Min" onclick={handleButtonClick}></lightning-button>
+            <lightning-button label="*" data-name="Mul" onclick={handleButtonClick}></lightning-button>
+            <lightning-button label="%" data-name="Div" onclick={handleButtonClick}></lightning-button>
+
+        </div>
+
+        <hr>
+
+        <div align="center">
+
+            <lightning-button icon-name="utility:redo" variant="base" label="RESET" onclick={handleReset}></lightning-button>
+
+        </div>
+
+    </lightning-card>
+
+    
+</template>

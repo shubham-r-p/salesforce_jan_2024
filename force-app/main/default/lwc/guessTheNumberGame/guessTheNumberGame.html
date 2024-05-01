@@ -1,0 +1,58 @@
+<template>
+
+    <lightning-card title="Guess The Number !" icon-name="">
+
+        <div align="center">
+
+            <lightning-input type="number" placeholder="Enter number between 1 - 100 !" min="1" max="100" label="Number"
+            onchange={handleUserNumber} disabled={disableInput} value={resetInputBox}
+            >
+            </lightning-input>
+
+        </div>
+
+
+        <div class="slds-grid">
+
+            <div class="slds-col slds-p-around_medium">
+                <span>
+        
+                    <lightning-button label="Guess !" icon-name="action:question_post_action" onclick={handleGuess}>
+                    </lightning-button>
+        
+                </span>
+            </div>
+            <div class="slds-col slds-p-around_medium">
+                <span>
+        
+                    <lightning-button label="Reset" icon-name="action:recall" onclick={handleRest}>
+                    </lightning-button>
+        
+                </span>
+            </div>
+        </div>
+
+        <template if:true={showGuessLog}>
+
+            <div align="center">
+
+                <h1>Your Guesses are --> {guessLog}</h1>
+
+            </div>
+
+        </template>
+
+        <template if:true={handleWinner}>
+
+            <div align="center">
+
+                <h1>Congratulations ! you guessed the number correct. Your score is {score} !</h1>
+
+            </div>
+
+        </template>
+
+
+    </lightning-card>
+    
+</template>

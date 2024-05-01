@@ -1,0 +1,101 @@
+<template>
+
+
+
+
+
+    <div class="slds-grid">
+
+        <div class="slds-col">
+        <span>
+
+            <lightning-card title="Ui recordApi Demo Record Creation">
+
+                <div class="slds-m-around_large">
+        
+                    <lightning-input disabled="true" label="Id" value={recordId}></lightning-input>
+                    <lightning-input label="Account Name" value={accName} onchange={handleAccountName}></lightning-input>
+        
+                </div>
+        
+                <div align="center">
+                    <lightning-button variant="success" label="Create Account" onclick={handleAccCreation}></lightning-button>
+                    &nbsp;
+                    <lightning-button variant="brand" label="Reset" onclick={resetHandler}></lightning-button>
+                </div>
+        
+            </lightning-card>
+
+        </span>
+        </div>
+
+        <div class="slds-col">
+        <span>
+
+            <lightning-card title="Ui recordApi Record Updation">
+
+                <div class="slds-m-around_medium">
+        
+                    <lightning-input label="Id" onchange={handleId}></lightning-input>
+                    <lightning-input label="Account Name" onchange={handleAccName}></lightning-input>
+                    <lightning-input label="Account Number" onchange={handleAccNum}></lightning-input>
+        
+                </div>
+        
+                <div align="center">
+                    <lightning-button variant="success" label="Update Account" onclick={handleAccUpdation}></lightning-button>
+                    &nbsp;
+                    <lightning-button variant="brand" label="Reset" onclick={resetHandler}></lightning-button>
+                </div>
+        
+            </lightning-card>
+
+        </span>
+        </div>
+
+        <div class="slds-col">
+        <span>
+
+            <lightning-card title="Ui recordApi Record Deletion">
+
+                <div class="slds-m-around_medium">
+        
+                    <template if:true={accDetailGetDelete}>
+        
+                        <div class="slds-m-around_large">
+
+                            <lightning-input label="Enter Account Id" onchange={handleAccountDelId}></lightning-input>
+
+                            <lightning-button label="Search" onclick={getAccInfoDel}></lightning-button>
+
+                            <br>
+
+                            <p><b>Account Name : </b>{accNameGetDelete}</p>
+                            <p><b>Account Id : </b>{accIdGetDelete}</p>
+                            <p><b>Account Industry : </b>{accIndustryGetDelete}</p>
+                            <p><b>Account Phone : </b>{accPhoneGetDelete}</p>
+                            <p><b>Account Owner : </b>{accOwnerGetDelete}</p>
+        
+                        </div>
+        
+                    </template>
+        
+                </div>
+        
+                <div align="center">
+                    <lightning-button   variant="destructive" 
+                                        label="Delete" 
+                                        onclick={deleteAccount}
+                                        icon-name="utility:delete"
+                                        icon-position="right"
+                    ></lightning-button>
+                </div>
+        
+            </lightning-card>
+
+        </span>
+        </div>
+
+        </div>
+    
+</template>

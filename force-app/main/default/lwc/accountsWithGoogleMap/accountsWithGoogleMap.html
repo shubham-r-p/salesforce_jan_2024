@@ -1,0 +1,107 @@
+<template>
+    <lightning-card>
+
+        <div class="slds-grid slds-gutters">
+
+            <div class="slds-col slds-size_1-of-2 slds-p-top_xx-small slds-p-bottom_xx-small scrolable">
+
+                <div>
+                    <div class="slds-form-element slds-p-around_small slds-m-left_large shadow">
+                        <lightning-icon icon-name="utility:checkin" alternative-text="Location" title="Location"
+                            class="slds-m-bottom_x-small" size="xx-small"></lightning-icon>
+                        <label class="slds-m-left_x-small slds-form-element__label" for="text-input-id-47">Find
+                            Accounts</label>
+                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                            <svg class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default"
+                                aria-hidden="true">
+                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+                            </svg>
+
+
+                            <div class="slds-grid slds-gutters">
+
+                                <div class="slds-col slds-size_2-of-3">
+                                    <lightning-input-address street-label="Street" city-label="City"
+                                        country-label="Country" province-label="Province" postal-code-label="PostalCode"
+                                        city={city} show-address-lookup onchange={handleChange}
+                                        address-lookup-placeholder="Enter account address...">
+                                    </lightning-input-address>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-3">
+                                    <lightning-input type="number" required min="0" max="1000" value={kmRange}
+                                        label="Within Range (km)" placeholder="Enter range..."
+                                        onchange={handleRangeChange}></lightning-input>
+                                </div>
+                            </div>
+
+
+                            <label class="slds-m-left_x-small slds-form-element__label"
+                                for="text-input-id-47">{addressLabel}</label>
+
+
+                        </div>
+                        <div class="slds-m-top_small action-buttons">
+                            <button class="slds-button slds-button_brand" onclick={handleSearchAccounts}>Find
+                                Accounts</button>
+                            <button class="slds-button slds-button_destructive slds-m-left_small"
+                                onclick={handleClearAddress}>Clear</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result records -->
+                <div>
+
+                    <template if:true={filteredAccountRecords}>
+                        <template for:each={filteredAccountRecords} for:item="Acc">
+                            <span key={Acc.Id} class="slds-card">
+
+                                <div data-id={Acc.Id}
+                                    class="slds-grid slds-card slds-m-top_small slds-p-vertical_small slds-p-around_medium slds-m-left_large shadow">
+                                    <div class="slds-col slds-list__item slds-grid">
+                                        <div class="slds-col slds-size_9-of-12 slds-grid slds-wrap">
+
+                                            <lightning-icon icon-name="standard:account_info" alternative-text="Info"
+                                                title="Info" size="medium"></lightning-icon>
+
+                                            <div class="slds-col slds-size_9-of-12" style="text-align: left;">
+                                                <div class="slds-grid slds-grid_vertical">
+                                                    <div class="slds-col nameAllin">
+                                                        <b class="name">
+                                                            {Acc.Name}
+                                                        </b><br>
+                                                    </div>
+                                                    <div class="slds-m-left_small">
+
+                                                        {Acc.BillingAddress.street} {Acc.BillingAddress.city},
+                                                        {Acc.BillingAddress.state} {Acc.BillingAddress.postalCode}
+                                                        </br>
+                                                        {Acc.BillingAddress.country}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </span>
+                        </template>
+                    </template>
+                </div>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2" style="padding-right: 2rem;">
+
+                <lightning-map map-markers={mapMarkers} markers-title="Accounts" list-view="visible"
+                onmarkerselect={handleMarkerSelect}
+                selected-marker-value={selectedMarkerValue}>
+                    <!-- zoom-level={mapZoomLevel} -->
+                </lightning-map>
+
+            </div>
+        </div>
+
+    </lightning-card>
+
+</template>

@@ -1,0 +1,55 @@
+<template>
+
+    <lightning-card title="C-P Child" icon-name="utility:upload">
+
+        <div align="center">
+
+            <lightning-button variant="destructive"
+                              icon-name="utility:dash"
+                              label="Sub"
+                              onclick={handleSubstraction}
+                              class="slds-p-horizontal_medium"
+            >
+            </lightning-button>
+
+            <lightning-button variant="success"
+                              icon-name="utility:add"
+                              label="Add"
+                              onclick={handleAddition}
+                              class="slds-p-horizontal_medium"
+
+            >
+            </lightning-button>
+
+        </div>
+
+        <hr>
+
+        <div align="center">
+
+            <lightning-button variant="brand" data-name="two" value="2" label="2" icon-name="utility:close" onclick={handleButtonClick}>
+            </lightning-button>
+
+            <lightning-button variant="brand" data-name="three" value="3" label="3" icon-name="utility:close" onclick={handleButtonClick}>
+            </lightning-button>
+
+            <lightning-button variant="brand" data-name="four" value="4" label="4" icon-name="utility:close" onclick={handleButtonClick}>
+            </lightning-button>
+            
+            <lightning-button variant="brand" data-name="five" value="5" label="5" icon-name="utility:close" onclick={handleButtonClick}>
+            </lightning-button>
+            
+        </div>
+
+        <hr>
+
+        <div align="center">
+
+            <lightning-button variant="inverse" value="0" label="RESET" icon-name="utility:redo" onclick={handleReset}>
+            </lightning-button>
+            
+        </div>
+
+    </lightning-card>
+    
+</template>

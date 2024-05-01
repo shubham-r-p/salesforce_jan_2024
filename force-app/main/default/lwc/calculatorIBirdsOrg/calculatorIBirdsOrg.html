@@ -1,0 +1,56 @@
+<template>
+
+    <lightning-card title="Calculator" icon-name="utility:connected_apps">
+
+            <div class="slds-p-around_large">
+
+                <lightning-input label="Enter 1st Number" type="number" name="numOne" onchange={handleCal}></lightning-input>
+
+
+                <lightning-input label="Enter 2nd Number" type="number" name="numTwo" onchange={handleCal}></lightning-input>
+
+            </div>
+
+
+                 <span class="slds-var-p-around_xx-large"> Answer : {ans}</span>  
+
+            <div class="slds-p-around_large">
+
+        <!-- Button group: simple buttons -->
+
+        
+
+        <lightning-button-group>
+            <lightning-button label="+" name="Add" onclick={performOperation} variant="brand" ></lightning-button>
+            <lightning-button label="-" name="Sub" onclick={performOperation} variant="destructive" ></lightning-button>
+            <lightning-button label="/" name="Div" onclick={performOperation} variant="success" ></lightning-button>
+            <lightning-button label="*" name="Mul" onclick={performOperation} variant="inverse" ></lightning-button>
+        </lightning-button-group>
+
+    
+
+
+
+
+             <!-- <lightning-button label="+" name="Add" onclick={addition} ></lightning-button>
+                <lightning-button label="-" name="Sub" onclick={subtraction} ></lightning-button>
+                <lightning-button label="/" name="Div" onclick={divisionn} ></lightning-button>
+                <lightning-button label="*" name="Mul" onclick={multiply} ></lightning-button>-->
+
+            </div>
+
+
+
+    </lightning-card>
+
+
+
+
+
+
+
+
+
+
+    
+</template>

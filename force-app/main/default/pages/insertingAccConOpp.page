@@ -1,0 +1,50 @@
+<apex:page docType="html-5.0" controller="insertingAccConOppController" showHeader="false">
+    
+    <apex:form >
+    	
+        <center><h1>
+            Account Contact Opportunity
+            </h1></center>
+        
+    	<apex:pageBlock tabStyle="Order" id="reload">
+           
+            <apex:pageBlockSection title="Account" rendered="true" >
+        		<apex:inputText label="Account Name" value="{!accName}" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Contact">
+        		<apex:inputText label="Last Name" value="{!LastName}" required="true"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Opportunity">
+        		<apex:inputText label="Opportunity Name" value="{!oppName}" required="true"/>
+        		<apex:input type="date" label="Close Date" value="{!closeDate}" />
+                
+            <apex:selectList label="Stage" value="{!stageName}" multiselect="false" size="3">
+                <apex:selectOption itemValue="Prospecting" itemLabel="Prospecting"/>
+                <apex:selectOption itemValue="Qualification" itemLabel="Qualification"/>
+                <apex:selectOption itemValue="Needs Analysis" itemLabel="Needs Analysis"/>
+                <apex:selectOption itemValue="Value Proposition" itemLabel="Value Proposition"/>
+                <apex:selectOption itemValue="Id. Decision Makers" itemLabel="Id. Decision Makers"/>
+                <apex:selectOption itemValue="Perception Analysis" itemLabel="Perception Analysis"/>
+                <apex:selectOption itemValue="Proposal/Price Quote" itemLabel="Proposal/Price Quote"/>
+                <apex:selectOption itemValue="Negotiation/Review" itemLabel="Negotiation/Review"/>
+                <apex:selectOption itemValue="Closed Won" itemLabel="Closed Won"/>
+                <apex:selectOption itemValue="Closed Lost" itemLabel="Closed Lost"/>
+            </apex:selectList>                
+                
+            </apex:pageBlockSection> 
+    
+            <center>
+    <apex:pageBlockButtons location="Bottom" >
+        <apex:commandButton value="Save" action="{!Save}" />
+        <apex:commandButton value="Reload" action="{!reload}" />
+        <!--<apex:commandButton value="Reload" oncomplete="window.top.location.reload()" />-->
+        </apex:pageBlockButtons>   
+            </center>
+            
+        </apex:pageBlock>
+    
+    </apex:form>
+    
+</apex:page>

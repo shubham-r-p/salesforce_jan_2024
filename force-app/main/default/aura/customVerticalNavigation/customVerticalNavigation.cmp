@@ -1,0 +1,104 @@
+<aura:component extends="forceCommunity:navigationMenuBase" implements="forceCommunity:availableForAllPageTypes" >
+    <!-- attributes passed from parent(customThemeLayout) -->
+    <aura:attribute name="navigationLinkSetId" type="String" />
+    <aura:attribute name="Contact" type="Contact" />
+    <aura:attribute name="designerNumber" type="Boolean" default="false"/>
+    <aura:attribute name="selectedItemIds" type="String[]" />
+    <aura:attribute name="iconMap" type="Object" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <div class="side-bar slds-grid slds-grid_vertical" style="height:100%">
+        <div class="slds-grid slds-grid_vertical slds-grid_vertical-stretch slds-col">
+          <div class="header" role="banner">
+                <img class="slds-var-m-around_medium slds-var-p-around_medium" style="width: -webkit-fill-available;" src="{!$Resource.Tandem_Logos + '/Tandem_Logo_Reverse.png'}"/>
+            </div>
+            
+            <div class="header" role="banner">
+                <div class="slds-grid slds-var-m-around_small slds-grid_align-spread">
+                    <!-- profile picture -->
+                    <!-- <div class="slds-col slds-align_absolute-center">
+                        <div class="slds-avatar slds-avatar_medium">
+                            <img src="{!v.userdetails.ProfilePicture}" alt="Profile Picture" />
+                        </div>
+                    </div> -->
+                    <!-- user name and details -->
+                    <div class="slds-col slds-var-m-left_small">
+                        Welcome,
+                        <br/>
+                        <!-- <br/>
+                        navigation - {!v.navigationLinkSetId} -->
+                        <!-- <aura:if isTrue="{!v.designerNumber}">
+                            Designer #{!v.userdetails.DesignerNumber}
+                        </aura:if> -->
+                    </div>
+                    <!-- down arrow -->
+                    <!-- <div class="slds-col slds-align_absolute-center">
+                        <lightning:icon data-is-submenu="true" iconName='utility:down' alternativeText='right' size='x-small' title='down'></lightning:icon>
+                    </div> -->
+                </div>
+            </div>
+            <!-- menu items div -->
+            <div class=" slds-grid_vertical slds-grid_vertical-stretch stage-container">
+                <div class="stage-left slds-shrink-none slds-scrollable_y slds-var-p-around_small open">
+                    <!-- menuitems have the navigation menu items -->
+                    <aura:iteration items="{!v.menuItems}" var="item" >
+                        <aura:if isTrue="{!item.subMenu}"> 
+                            <a class="sub-menu" data-menu-item-id="{!item.id}" data-is-submenu="true" onclick="{!c.onSubMenuClick}" style="margin-left:4px;" >
+                                    <div class="slds-grid slds-grid_align-spread  slds-size_1-of-1 "  >
+                                        <div data-menu-item-id="{!item.id}" data-is-submenu="true" style="display: flex; align-items: center;" >
+                                            <aura:iteration items="{!v.iconMap}" var="values">
+                                            <aura:if isTrue="{!item.label == values.key}">
+                                               <lightning:icon iconName='{!values.value}' alternativeText='right' size='small' title='right'/>
+                                            </aura:if>
+                                            </aura:iteration> 
+                                            <span style="margin-left:18px;">{!item.label}</span></div>
+                                        <div class="slds-col down-icon" data-is-submenu="true">
+                                                <lightning:icon data-is-submenu="true" iconName='utility:right' alternativeText='right' size='x-small' title='right'></lightning:icon>
+                                        </div>
+                                    </div>
+                                </a>
+                           
+                            <div class="slds-col sub-menu-container hide">
+                                <aura:iteration items="{!item.subMenu}" var="subItem">
+                                        <a data-menu-item-id="{!subItem.id}" class="stage-left__subMenu slds-max-medium-hide sub-menu-items" onclick="{!c.onClick}">{!subItem.label}</a>
+                                </aura:iteration>
+                            </div>
+                        <aura:set attribute="else">
+                               <a class="stage-left__text slds-max-medium-hide menu-item" data-menu-item-id="{!item.id}" onclick="{!c.onClick}" style="display: flex; align-items: center;">
+                                 <aura:iteration items="{!v.iconMap}" var="values">
+                                     <aura:if isTrue="{!item.label == values.key}">
+                                        <lightning:icon iconName='{!values.value}' alternativeText='right' size='small' title='right' style="margin-right: 20px;"/>
+                                     </aura:if>
+                                  </aura:iteration>
+                                  <span>{!item.label}</span>
+                               </a>
+                            </aura:set>
+                        </aura:if>
+                    </aura:iteration>
+                </div>
+            </div>
+        </div>
+        <!-- top nav menu items end -->
+
+        <!-- privacy policy and terms and conditions -->
+        <div class="side-bar slds-grid slds-grid_vertical slds-grid_align-space slds-col_bump-bottom">
+
+            <div class="slds-col stage-left__text slds-var-m-around_small slds-max-medium-hide">
+                <a href="https://cabinetworksgroup.com/privacy-policy/" target="_blank">Privacy Policy</a>
+            </div>
+            <div class="slds-col stage-left__text slds-var-m-around_small slds-max-medium-hide">
+                <a href="https://cabinetworksgroup.com/terms/" target="_blank">Terms &amp; Conditions</a>
+            </div>
+
+            <div class="slds-col stage-left__text slds-var-m-around_small slds-max-medium-hide slds-grid slds-grid_align-spread" onclick="{!c.logout}" style="cursor: pointer;">
+                <div class="slds-col">
+                    Logout
+                </div>
+                <div class="slds-col">
+                    <lightning:icon data-is-submenu="true" iconName='utility:logout' alternativeText='logout' size='x-small' title='logout'></lightning:icon>
+                </div>
+            </div>
+            
+     </div>
+  </div>
+   
+</aura:component>

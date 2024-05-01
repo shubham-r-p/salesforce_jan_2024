@@ -1,0 +1,20 @@
+<template>
+
+    <lightning-card icon-name="action:approval" title="This is First LWC Component" >
+
+        <lightning-input label="Enter First Name" 
+                         name="fn" 
+                         onchange={onchangeEvent} class="slds-p-around_small" ></lightning-input>
+
+        <lightning-input label="Enter Last Name" 
+                         name="ln" 
+                         onchange={onchangeEvent} class="slds-p-around_small" ></lightning-input>
+        
+        <br/>
+        <lightning-button class="slds-p-around_small" label="Click Here" variant="brand" onclick={showDetails}></lightning-button>
+
+    </lightning-card>
+    
+    
+
+</template>

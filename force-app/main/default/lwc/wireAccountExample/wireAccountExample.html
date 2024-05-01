@@ -1,0 +1,74 @@
+<template>
+
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-account" title="Account">
+                        <lightning-icon icon-name="standard:account" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Account</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <a href="#" class="slds-card__header-link slds-truncate" title={title}>
+                            <span>{title}</span>
+                        </a>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body">
+            <table
+                class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered slds-table_fixed-layout"
+                role="grid" aria-label="Example table in a Card">
+                
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Name">Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Company">Account Number</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Title">Active</div>
+                        </th>
+
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Owner">Owner</div>
+                        </th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="slds-hint-parent" for:each={lstAccount} for:item="acc" key={acc.Id}>
+                        <th scope="row">
+                            <div class="slds-truncate">
+                                <a href={acc.URL} target="_blank" tabindex="-1">{acc.Name}</a>
+                            </div>
+                        </th>
+                        <td role="gridcell">
+                            <div class="slds-truncate">{acc.AccountNumber}</div>
+                        </td>
+                        <td role="gridcell">
+                            <div class="slds-truncate">{acc.Active__c}</div>
+                        </td>
+
+                            <td>
+                                <em>By Shubham Patil</em>
+                            </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <footer class="slds-card__footer">
+            <a class="slds-card__footer-action" href="#">View All
+                <span class="slds-assistive-text">Accounts</span>
+            </a>
+        </footer>
+    </article>
+
+</template>

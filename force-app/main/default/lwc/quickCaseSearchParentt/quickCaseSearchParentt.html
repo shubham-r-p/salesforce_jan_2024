@@ -1,0 +1,43 @@
+<template>
+
+    <lightning-card title="Quick case search">
+
+        <div class="slds-grid slds-wrap slds-p-around_large">
+        
+            <div class="slds-col slds-size_10-of-12">
+                <lightning-input type="number" onchange={handleCaseNoChange} label="Search Case"
+                    placeholder="Enter case number !"></lightning-input>
+            </div>
+        
+        
+        
+            <div class="slds-col slds-size_2-of-12 slds-var-m-top_large slds-p-left_xx-large">
+                <lightning-button label="Search" onclick={handleSearch}>
+                </lightning-button>
+            </div>
+        
+        </div>
+
+        <!-- <div class="slds-p-around_medium">
+
+            <lightning-input
+                            type="number"
+                            onchange={handleCaseNoChange}
+                            label="Search Case"
+                            placeholder="Enter case number !"
+            
+            ></lightning-input>
+
+            <lightning-button
+                            label="Search"
+                            onclick={handleSearch}
+            >
+            </lightning-button>
+
+        </div> -->
+        
+        <c-quick-case-search-childd></c-quick-case-search-childd>
+
+    </lightning-card>
+    
+</template>
